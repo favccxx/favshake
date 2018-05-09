@@ -1,6 +1,6 @@
 # favshake
 favshake
-基于HTML + JS 的网页版#摇一摇#
+前端基于HTML + JS 的网页版#摇一摇#应用程序，后端开发技术Spring4.2 + Spring Data Mongo 1.7.2 + MongoDB 3.1
 
 
 # 实现原理
@@ -28,9 +28,8 @@ favshake
 
 - 摇一摇结果1： 什么也没摇到
 
-<div style="text-align: center">
 ![image](https://github.com/favccxx/favshake/raw/master/images/shake_nothing.png)
-</div>
+
 
 - 摇一摇结果2： 摇到现金红包
 
