@@ -23,4 +23,4 @@ favshake
 
 # 效果图
 
-![image](https://github.com/favccxx/favshake/tree/master/images/shake_index.png)
+![image](https://github.com/favccxx/favshake/raw/master/images/shake_index.png)
