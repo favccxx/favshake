@@ -81,7 +81,7 @@
 					$("#mysterImg").attr("src", "assets/imgs/cashEnvelop.png");
 				}, 1000);
 				
-				return;
+// 				return;
 				if(redEnvelopType=="CASH"){
 					$("#shakeHand").fadeOut();
 					$("#mysterImg").fadeIn();

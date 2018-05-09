@@ -48,7 +48,10 @@ public class BlessWordsRepositoryImpl implements IBlessWordsRepository {
 			maxNum = existBlessWords.getBlessNum() + 1;
 		}
 		
-		int randomNum = (new Random()).nextInt(maxNum) + 1;
+		int randomNum = (new Random()).nextInt(maxNum) ;
+		if(randomNum < 1) {
+			randomNum = 1;
+		}
 		query = new Query();	
 		Criteria criteria = new Criteria();
 		criteria.and("blessNum").is(randomNum);	

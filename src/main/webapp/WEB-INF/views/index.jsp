@@ -24,7 +24,7 @@
 	system.mac = p.indexOf("Mac") == 0; 
 	system.x11 = (p == "X11") || (p.indexOf("Linux") == 0); 
 	system.ipad = (navigator.userAgent.match(/iPad/i) != null)?true:false; 
-	//跳转语句，如果是手机访问就自动跳转到wap.baidu.com页面 
+	
 	if (system.win || system.mac || system.xll||system.ipad) { 
 		window.location.href = "pcShake"; 
 	} else { 
@@ -35,7 +35,8 @@
 
 <body>
 	<div id="header" style="text-align: center;">
-    	<div id="logo"><h1>摇一摇有惊喜</h1></div>
+    	<div id="logo"><h1>摇一摇有惊喜</h1>
+    	</div>
 	</div>
 	<div id="main" style="text-align: center;">
 		<div class="demo">

@@ -48,7 +48,10 @@ public class CouponsRepositoryImpl implements ICouponsRepository {
 			maxNum = existCoupons.getCouponsRandom() + 1;
 		}
 		
-		int randomNum = (new Random()).nextInt(maxNum) + 1;
+		int randomNum = (new Random()).nextInt(maxNum);
+		if(randomNum<1) {
+			randomNum = 1;
+		}
 		query = new Query();	
 		Criteria criteria = new Criteria();
 		criteria.and("couponsRandom").is(randomNum);	

@@ -90,7 +90,7 @@
 					<input type="text" id="cashNum" name="cashNum" value="" style="width:380px;">元<span style="color:red;"> *</span>
 				</div>
 				<div class="shakeBlock">
-					<span style="color:#AFA09D;">请将赞助金转到chenxu.wo@163.com支付宝账户，赞助以红包回馈用户。</span>
+					<span style="color:#AFA09D;">请将赞助金转到XXX支付宝账户，赞助以红包回馈用户。</span>
 				</div>
 			</div>
 			<div class="shakeBlock">
