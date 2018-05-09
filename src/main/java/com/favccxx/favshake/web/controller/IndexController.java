@@ -24,13 +24,13 @@ public class IndexController {
 		return "envelope/SuperPhotosEnvelop";
 	}
 	
-	@RequestMapping("/shakeIndex")
-	public String shakeIndex(){
-		return "shakeIndex";
+	@RequestMapping("/shake")
+	public String shake(){
+		return "shake";
 	}
 
-	@RequestMapping("/pcVisit")
-	public String pcVisit(){
-		return "pcVisit";
+	@RequestMapping("/pcShake")
+	public String pcShake(){
+		return "pcShake";
 	}
 }

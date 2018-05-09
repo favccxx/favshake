@@ -4,33 +4,41 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="keywords" content="摇一摇,爱摇呀">
-<meta name="viewport" content="width=device-width"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"> 
 <link rel="shortcut icon" href="assets/imgs/favicon.png" />
-<title>爱摇呀-摇出你的专属奖品</title>
-<link rel="stylesheet" type="text/css" href="assets/css/index.css">
-<script type="text/javascript">
-	//平台、设备和操作系统 
-	var system = { 
-	    win: false, 
-	    mac: false, 
-	    xll: false, 
-	    ipad:false 
-	}; 
-	//检测平台 
-	var p = navigator.platform; 
-	system.win = p.indexOf("Win") == 0; 
-	system.mac = p.indexOf("Mac") == 0; 
-	system.x11 = (p == "X11") || (p.indexOf("Linux") == 0); 
-	system.ipad = (navigator.userAgent.match(/iPad/i) != null)?true:false; 
-	//跳转语句，如果是手机访问就自动跳转到wap.baidu.com页面 
-	if (system.win || system.mac || system.xll||system.ipad) { 
-		window.location.href = "pcShake"; 
-	} else { 
-    	
-	} 
-</script>
+<title>哎摇-摇一摇</title>
+<style type="text/css">
+	.demo{width:320px; margin:40px auto 0 auto; }
+	.hand { width: 190px; height: 300px; margin:0 auto; background: url(assets/imgs/hand.png) no-repeat; }
+	.hand-animate { -webkit-animation: hand_move infinite 2s; }
+	.result { background: #393B3C; border: #2C2C2C 1px solid; box-shadow: inset #4D4F50 0 0 0 1px; border-radius: 10px; color: #fff; padding: 10px; width: 300px; opacity: 0;
+	        -webkit-transition: all 1s;
+	           -moz-transition: all 1s;
+	            -ms-transition: all 1s;
+	             -o-transition: all 1s;
+	                transition: all 1s; }
+	.result-show { opacity: 1; margin-top: 50px; }
+	
+	 @-webkit-keyframes hand_move {
+	        0% {
+	            -webkit-transform: rotate(0);
+	               -moz-transform: rotate(0);
+	                -ms-transform: rotate(0);
+	                 -o-transform: rotate(0);
+	                    transform: rotate(0); }
+	        50% {
+	            -webkit-transform: rotate(15deg);
+	               -moz-transform: rotate(15deg);
+	                -ms-transform: rotate(15deg);
+	                 -o-transform: rotate(15deg);
+	                    transform: rotate(15deg); }
+	        100% {
+	            -webkit-transform: rotate(0);
+	               -moz-transform: rotate(0);
+	                -ms-transform: rotate(0);
+	                 -o-transform: rotate(0);
+	                    transform: rotate(0); }
+	    }
+</style>
 </head>
 
 <body>
@@ -47,7 +55,6 @@
 	</div>
 	<script src="assets/js/jquery-2.1.4.min.js"></script>
 	<script src="assets/js/shake.js"></script>
-	<script src="assets/js/crypto-js/crypto-js.js"></script>
 	<script type="text/javascript">	
 		var shakeMusic = document.getElementById("shakeMusic");
 
@@ -55,7 +62,8 @@
 			//默认图片的左右摇动效果
 			var shakeInterval = setInterval(shakeLR, 500);
 			function shakeLR(){
-				$("#shakeHand").animate({marginLeft:"50px"},"slow","swing").animate({marginLeft:""});
+				$("#shakeHand").animate({marginLeft:"100px"},"slow","swing",function ss(){
+				}).animate({marginLeft:"-100px"});
 			}
 			
 			var myShakeEvent = new Shake({
@@ -105,9 +113,7 @@
 					if(redEnvelopType=="CASH"){
 						setTimeout(function() {
 							$("#shakeHand").attr("src", "assets/imgs/cashEnvelop.png");
-							var encryptData = redEnvelop.redEnvelopValue + "abcde";
-							var cashValue = CryptoJS.AES.encrypt(encryptData, 'ishake');
-							document.getElementById("shakeResult").innerHTML = "<a target='_blank' style='color:white;' href='initReceiveCash?redEnvelopValue=" + cashValue + "'>恭喜你获得" + redEnvelop.redEnvelopValue  +"元现金红包，点击领取</a>";
+							document.getElementById("shakeResult").innerHTML = "<a target='_blank' href='initReceiveCash?redEnvelopValue=" + redEnvelop.redEnvelopValue + "'>恭喜你获得" + redEnvelop.redEnvelopValue  +"元现金红包，点击领取</a>";
 							$("#shakeResult").addClass("result result-show");
 						}, 500);
 					}else if(redEnvelopType=="BLESSINGS"){
@@ -116,17 +122,17 @@
 						$("#shakeResult").addClass("result result-show");
 					}else if(redEnvelopType=="COUPONS"){
 						$("#shakeHand").attr("src", "assets/imgs/coupons.png");
-						document.getElementById("shakeResult").innerHTML = "<a target='_blank' style='color:white;' href='" + redEnvelop.redEnvelopURL + "?redEnvelopValue=" + redEnvelop.redEnvelopName + "'>恭喜你获得" + redEnvelop.redEnvelopName  +"，点击领取</a>";
+						document.getElementById("shakeResult").innerHTML = "<a target='_blank' href='" + redEnvelop.redEnvelopURL + "?redEnvelopValue=" + redEnvelop.redEnvelopName + "'>恭喜你获得" + redEnvelop.redEnvelopName  +"，点击领取</a>";
 						$("#shakeResult").addClass("result result-show");
 					}else if(redEnvelopType=="GAMES"){
 						var randomNum = Math.floor(Math.random() * 15);
 						$("#shakeHand").attr("src", "assets/photos/" + randomNum + ".png");
-						document.getElementById("shakeResult").innerHTML = "<a href='superPhotos' style='color:white;' target='_blank'>恭喜你获得美女图片一张！</a>";
+						document.getElementById("shakeResult").innerHTML = "<a href='superPhotos' target='_blank'>恭喜你获得Google相册展！</a>";
 						$("#shakeResult").addClass("result result-show");
 					}else{
 						var randomNum = Math.floor(Math.random() * 15);
 						$("#shakeHand").attr("src", "assets/photos/" + randomNum + ".png");
-						document.getElementById("shakeResult").innerHTML = "<a style='color:white;' href='#'>恭喜你获得美女图片一张！</a>";
+						document.getElementById("shakeResult").innerHTML = "<a href='#'>恭喜你获得美女图片一张！</a>";
 						$("#shakeResult").addClass("result result-show");
 					}					
 				});
@@ -134,9 +140,9 @@
 		};
 	</script>
 
-	<div id="footer" class="footer">
+	<div id="footer" style="text-align: center;">
 		<p>
-			系统奖品由<a href="http://www.favdeal.cn" target="_blank">哎咦网</a>友情赞助。
+			系统奖品由<a href="http://www.favdeal.cn" target="_blank">哎咦网</a>友情赞助，<a href="sponsor/initSponsor" target="_blank">我要赞助</a>
 		</p>
 	</div>
 </body>
