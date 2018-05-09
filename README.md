@@ -28,7 +28,9 @@ favshake
 </center>
 - 摇一摇结果1： 什么也没摇到
 
-![image](https://github.com/favccxx/favshake/raw/master/images/shake_nothing.png)
+<center>
+![](https://github.com/favccxx/favshake/tree/master/images/shake_nothing.png)
+</center>
 
 - 摇一摇结果2： 摇到现金红包
 
