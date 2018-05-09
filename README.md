@@ -23,13 +23,13 @@ favshake
 
 # 效果图
 - 摇一摇首页
-<center>
+
 ![image](https://github.com/favccxx/favshake/raw/master/images/shake_index.png)
-</center>
+
 - 摇一摇结果1： 什么也没摇到
 
 <div style="text-align: center">
-![image](https://github.com/favccxx/favshake/raw/master/images/shake_cash.png)
+![image](https://github.com/favccxx/favshake/raw/master/images/shake_nothing.png)
 </div>
 
 - 摇一摇结果2： 摇到现金红包
